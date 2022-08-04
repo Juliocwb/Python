@@ -23,23 +23,10 @@ def listar(lista):
         print("Quantidade de pessoa cadastrada: {}".format(len(lista)))
     else:
       print("Nao existe nenhuma pessoa cadastrada no sistema. ")
+      
 def procurar(lista):
-    print("Buscar Pessoa")
-    if len(lista) > 0:        
-        nome = input("Digite o nome da pessoa: ")
-        if existe_pessoa(lista, nome):
-            for pessoa in lista:
-                if pessoa ['nome'] == nome:
-                    print("Pessoa {}".format (i+1))
-                    print("Nome: {} ".format(pessoa['nome']))
-                    print("telefone: {}".format(pessoa['telefone']))
-                    print("cidade: {} ".format(pessoa['cidade']))
-                    print("estado: {}".format(pessoa['estado']))
-                    print("status: {}".format(pessoa['status']))        
-        else:
-          print("Nao existe pessoa cadastrada com esser nome {} ".format(nome))
-    else:
-      print("Nao existe nenhuma pessoa cadastrada no sistema.")
+  pass
+
 def excluir():
   pass
 
@@ -54,7 +41,7 @@ def Menu ():
     print("4. Procurar pessoa na Agenda")
     print("5. Excluir pessoa na Agenda")
     print("6. Sair do sistema")
-    opção = int(input("> "))4
+    opção = int(input("> "))
 
     if opção == 1:
       cadastrar(lista)
