@@ -1,5 +1,11 @@
 from traceback import print_tb
 
+def existe_pessoa(lista, nome):
+   if len(lista) > 0:
+     for pessoa in lista:
+       if pessoa ['nome'] == nome:
+          return True
+   return False
 
 def cadastrar(lista):
     Agenda = { 
@@ -12,35 +18,30 @@ def cadastrar(lista):
     lista.append(Agenda)
   
 def alterar(lista):
-  buscar = str(input("Digite o nome da pessoa que desja alterar cadastro: "))
-  achou = False
-  i = 0
-  while i < len(lista):
-     if lista[i]['nome'] == buscar:
-           achou = True
-           break 
-     i+=1
-  if achou:
-    for pessoa in lista:
-        print("Nome: ",pessoa['nome'])
-        print("telefone: ",pessoa['telefone'])
-        print("Cidade: ",pessoa['cidade'])
-        print("Estado: ",pessoa['estado'])
-        print("Status: ",pessoa['status'])
+    print ("Atlerar cadastro")
+    if len(lista) > 0:
+       nome = input("Digita o nome da pessoa para ser alterado: ")
+       if existe_pessoa(lista, nome):
+          print("O cadastro encontrado. As informaçõe segue abaixo: ")
+          for pessoa in lista:
+            if pessoa['nome'] == nome:
+               print("Nome: ",pessoa['nome'])
+               print("telefone: ",pessoa['telefone'])
+               print("cidade: ",pessoa['cidade'])
+               print("estado: ",pessoa['estado'])
+               print("status: ",pessoa['status'])
 
-        pessoa['nome'] = input("Digite o novo nome para cadastro: ")
-        pessoa['telefone'] = input("Digite o novo Telefone: ")        
-        pessoa['cidade'] = input("Digite o novo nome da Cidade: ")
-        pessoa['estado'] = input("Digite o novo nome do Estado: ")
-        pessoa['status'] = input("Digite o novo nome do Status: ") 
+               pessoa['nome'] = input("digite o novo nome do cadastro:")
+               pessoa['telefone'] = input("Digite o novo telefone:")
+               pessoa['cidade'] = input("Digite o novo cidade:")
+               pessoa['estado'] = input("Digite o novo estado:")
+               pessoa['status'] = input("Digite o novo status:")
+               break
+       else:
+          print(f"Não existe esse nome {nome} no cadastro do sistema")
+    else:
+       print("nao existe nenhum cadastro no sistema.")
 
-        print("Os dados do cadastros {} foram alterados com sucesso!", format(pessoa['nome']))
-        break    
-    
-  else:
-    print(f"{buscar} Nao encontrado")
-    
-  
 def listar(lista):
     print("Lista cadastrado")
     if len(lista) > 0:
