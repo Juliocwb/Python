@@ -1,3 +1,6 @@
+from traceback import print_tb
+
+
 def cadastrar(lista):
     Agenda = { 
       'nome': input("Digite nome da pessoa: "),
@@ -8,10 +11,9 @@ def cadastrar(lista):
     }
     lista.append(Agenda)
   
-def alterar(lista):
-    print( "Informa nome da pessoa que deseja altera os dados: ")
-    buscar = str(input("Nome da pessoa: "))
-    print()
+def alterar():
+    pass
+    
   
 def listar(lista):
     print("Lista cadastrado")
@@ -27,9 +29,20 @@ def listar(lista):
     else:
       print("Nao existe nenhuma pessoa cadastrada no sistema. ")
       
-def procurar():
-  pass
-
+def procurar(lista):
+  buscar = str(input("Digite o nome da pessao que desja procurar: "))
+  achou = False
+  i = 0
+  while i < len(lista):
+     if lista[i]['nome'] == buscar:
+          achou = True
+          break 
+          i+=1
+  if achou:
+    print(f"{buscar} achou na posicao{i} ")
+  else:
+    print(f"{buscar} not achou na posicao")
+  
 def excluir():
   pass
 
@@ -49,11 +62,11 @@ def Menu ():
     if opção == 1:
       cadastrar(lista)
     elif opção == 2:
-      alterar(lista)
+      alterar()
     elif opção == 3:
       listar(lista)
     elif opção == 4:
-      procurar()
+      procurar(lista)
     elif opção == 5:
       excluir()
     elif opção == 6:  
