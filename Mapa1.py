@@ -10,10 +10,23 @@ def cadastrar(lista):
   
 def alterar():
   pass
-def listar():
+def listar(lista):
+    print("Lista cadastrado")
+    if len(lista) > 0:
+        for i, pessoa in enumerate(lista):
+            print("Pessoa {}".format (i+1))
+            print("Nome: {} ".format(pessoa['nome']))
+            print("telefone: {}".format(pessoa['telefone']))
+            print("cidade: {} ".format(pessoa['cidade']))
+            print("estado: {}".format(pessoa['estado']))
+            print("status: {}".format(pessoa['status']))
+        print("Quantidade de pessoa cadastrada: {}".format(len(lista)))
+    else:
+      print("Nao existe nenhuma pessoa cadastrada no sistema. ")
+      
+def procurar(lista):
   pass
-def procurar():
-  pass
+
 def excluir():
   pass
 
@@ -35,9 +48,13 @@ def Menu ():
     elif opção == 2:
       alterar()
     elif opção == 3:
+<<<<<<< HEAD
       listar()
+=======
+      listar(lista)  
+>>>>>>> 02a9677a82692d34f6723e0ef14cc40e66f98b7a
     elif opção == 4:
-      procurar()
+      procurar(lista)
     elif opção == 5:
       excluir()
     elif opção == 6:  
