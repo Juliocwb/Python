@@ -57,20 +57,23 @@ def listar(lista):
       print("Nao existe nenhuma pessoa cadastrada no sistema. ")
       
 def procurar(lista):
-  buscar = str(input("Digite o nome da pessao que desja procurar: "))
-  achou = False
-  i = 0
-  while i < len(lista):
-     if lista[i]['nome'] == buscar:
-          achou = True
-          break 
-     i+=1
-  if achou:
-    print(f"{buscar} achou na posicao {i} ")
-    print(f"{lista [i]}")
-    
-  else:
-    print(f"{buscar} Nao encontrado")
+    print ("Listar cadastro")
+    if len(lista) > 0:
+       nome = input("Digita nome da pessoa que deseja procurar  ")
+       if existe_pessoa(lista, nome):
+          print("O cadastro encontrado. As informaçõe segue abaixo: ")
+          for pessoa in lista:
+            if pessoa['nome'] == nome:
+               print("Nome: ",pessoa['nome'])
+               print("telefone: ",pessoa['telefone'])
+               print("cidade: ",pessoa['cidade'])
+               print("estado: ",pessoa['estado'])
+               print("status: ",pessoa['status'])               
+               break
+       else:
+          print(f"Não existe esse nome {nome} no cadastro do sistema")
+    else:
+       print("nao existe nenhum cadastro no sistema.")
   
 def excluir():
   pass
