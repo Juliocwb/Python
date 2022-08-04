@@ -4,7 +4,7 @@ def cadastrar(lista):
       "telefone": input("Digita o telefone: "),
       "cidade": input("Digite a cidade: "),
       "estado": input("Digite o estado: "),
-      "status": input("Digite P-> Pessoal) ou (C-> Comercial: ")
+      "status": input("Digite (P-> Pessoal) ou (C-> Comercial): ")
     }
     lista.append(Agenda)
   
@@ -35,7 +35,7 @@ def Menu ():
     elif opção == 2:
       alterar()
     elif opção == 3:
-      listar()  
+      listar()
     elif opção == 4:
       procurar()
     elif opção == 5:
