@@ -37,9 +37,11 @@ def procurar(lista):
      if lista[i]['nome'] == buscar:
           achou = True
           break 
-          i+=1
+     i+=1
   if achou:
-    print(f"{buscar} achou na posicao{i} ")
+    print(f"{buscar} achou na posicao {i} ")
+    print(f"{lista [i]}")
+    
   else:
     print(f"{buscar} not achou na posicao")
   
