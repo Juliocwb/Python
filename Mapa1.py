@@ -11,8 +11,34 @@ def cadastrar(lista):
     }
     lista.append(Agenda)
   
-def alterar():
-    pass
+def alterar(lista):
+  buscar = str(input("Digite o nome da pessoa que desja alterar cadastro: "))
+  achou = False
+  i = 0
+  while i < len(lista):
+     if lista[i]['nome'] == buscar:
+           achou = True
+           break 
+     i+=1
+  if achou:
+    for pessoa in lista:
+        print("Nome: ",pessoa['nome'])
+        print("telefone: ",pessoa['telefone'])
+        print("Cidade: ",pessoa['cidade'])
+        print("Estado: ",pessoa['estado'])
+        print("Status: ",pessoa['status'])
+
+        pessoa['nome'] = input("Digite o novo nome para cadastro: ")
+        pessoa['telefone'] = input("Digite o novo Telefone: ")        
+        pessoa['cidade'] = input("Digite o novo nome da Cidade: ")
+        pessoa['estado'] = input("Digite o novo nome do Estado: ")
+        pessoa['status'] = input("Digite o novo nome do Status: ") 
+
+        print("Os dados do cadastros {} foram alterados com sucesso!", format(pessoa['nome']))
+        break    
+    
+  else:
+    print(f"{buscar} Nao encontrado")
     
   
 def listar(lista):
@@ -43,7 +69,7 @@ def procurar(lista):
     print(f"{lista [i]}")
     
   else:
-    print(f"{buscar} not achou na posicao")
+    print(f"{buscar} Nao encontrado")
   
 def excluir():
   pass
@@ -64,7 +90,7 @@ def Menu ():
     if opção == 1:
       cadastrar(lista)
     elif opção == 2:
-      alterar()
+      alterar(lista)
     elif opção == 3:
       listar(lista)
     elif opção == 4:
