@@ -87,7 +87,7 @@ def excluir(lista):
                print("estado: ",pessoa['estado'])
                print("status: ",pessoa['status'])
 
-               del lista[i]
+               lista.pop(i)
 
                print("Pessoa foi apagada com sucesso!")
        else:
@@ -106,19 +106,19 @@ def Menu ():
     print("4. Procurar pessoa na Agenda")
     print("5. Excluir pessoa na Agenda")
     print("6. Sair do sistema")
-    opção = int(input("> "))
+    op = int(input("> "))
 
-    if opção == 1:
+    if op == 1:
       cadastrar(lista)
-    elif opção == 2:
+    elif op == 2:
       alterar(lista)
-    elif opção == 3:
+    elif op == 3:
       listar(lista)
-    elif opção == 4:
+    elif op == 4:
       procurar(lista)
-    elif opção == 5:
+    elif op == 5:
       excluir(lista)
-    elif opção == 6:  
+    elif op == 6:  
       print("Saindo do sistema")
       break
     else:
