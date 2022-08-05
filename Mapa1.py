@@ -6,7 +6,6 @@ def existe_pessoa(lista, nome):
        if pessoa ['nome'] == nome:
           return True
    return False
-
 def cadastrar(lista):
     Agenda = { 
       'nome': input("Digite nome da pessoa: "),
@@ -75,8 +74,26 @@ def procurar(lista):
     else:
        print("nao existe nenhum cadastro no sistema.")
   
-def excluir():
-  pass
+def excluir(lista):
+    if len(lista) > 0:
+       nome = input("Digita nome da pessoa que deseja excluir  ")
+       if existe_pessoa(lista, nome):
+          print("O cadastro encontrado. As informaçõe segue abaixo: ")
+          for i, pessoa in enumerate (lista):
+            if pessoa['nome'] == nome:
+               print("Nome: ",pessoa['nome'])
+               print("telefone: ",pessoa['telefone'])
+               print("cidade: ",pessoa['cidade'])
+               print("estado: ",pessoa['estado'])
+               print("status: ",pessoa['status'])
+
+               del lista[i]
+
+               print("Pessoa foi apagada com sucesso!")
+       else:
+          print(f"Não existe esse nome {nome} no cadastro do sistema")
+    else:
+       print("nao existe nenhum cadastro no sistema.")
 
 def Menu ():
 
@@ -100,7 +117,7 @@ def Menu ():
     elif opção == 4:
       procurar(lista)
     elif opção == 5:
-      excluir()
+      excluir(lista)
     elif opção == 6:  
       print("Saindo do sistema")
       break
